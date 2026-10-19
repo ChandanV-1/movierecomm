@@ -1,0 +1,21 @@
+# dataset (MovieLens license doesn't allow redistribution; users download it themselves)
+ml-latest-small/
+*.zip
+
+# saved Spark model and Spark temp files
+output/als_model/
+metastore_db/
+spark-warehouse/
+derby.log
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/

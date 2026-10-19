@@ -1,0 +1,111 @@
+Ratings: 100836 | Users: 610 | Movies: 9724 | Sparsity: 0.9830
+
+Rating distribution:
++------+-----+
+|rating|  cnt|
++------+-----+
+|   0.5| 1370|
+|   1.0| 2811|
+|   1.5| 1791|
+|   2.0| 7551|
+|   2.5| 5550|
+|   3.0|20047|
+|   3.5|13136|
+|   4.0|26818|
+|   4.5| 8551|
+|   5.0|13211|
++------+-----+
+
+Top 10 most-rated movies:
++-----------------------------------------+-----------+----------+
+|title                                    |num_ratings|avg_rating|
++-----------------------------------------+-----------+----------+
+|Forrest Gump (1994)                      |329        |4.16      |
+|Shawshank Redemption, The (1994)         |317        |4.43      |
+|Pulp Fiction (1994)                      |307        |4.2       |
+|Silence of the Lambs, The (1991)         |279        |4.16      |
+|Matrix, The (1999)                       |278        |4.19      |
+|Star Wars: Episode IV - A New Hope (1977)|251        |4.23      |
+|Jurassic Park (1993)                     |238        |3.75      |
+|Braveheart (1995)                        |237        |4.03      |
+|Terminator 2: Judgment Day (1991)        |224        |3.97      |
+|Schindler's List (1993)                  |220        |4.23      |
++-----------------------------------------+-----------+----------+
+
+Top 10 highest-rated movies (min 50 ratings):
++---------------------------------------------------------------------------+-----------+----------+
+|title                                                                      |num_ratings|avg_rating|
++---------------------------------------------------------------------------+-----------+----------+
+|Shawshank Redemption, The (1994)                                           |317        |4.43      |
+|Godfather, The (1972)                                                      |192        |4.29      |
+|Fight Club (1999)                                                          |218        |4.27      |
+|Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964)|97         |4.27      |
+|Cool Hand Luke (1967)                                                      |57         |4.27      |
+|Godfather: Part II, The (1974)                                             |129        |4.26      |
+|Rear Window (1954)                                                         |84         |4.26      |
+|Goodfellas (1990)                                                          |126        |4.25      |
+|Departed, The (2006)                                                       |107        |4.25      |
+|Usual Suspects, The (1995)                                                 |204        |4.24      |
++---------------------------------------------------------------------------+-----------+----------+
+
+Ratings per user (summary):
++-------+------------------+
+|summary|             count|
++-------+------------------+
+|  count|               610|
+|   mean|165.30491803278687|
+| stddev| 269.4805843871722|
+|    min|                20|
+|    max|              2698|
++-------+------------------+
+
+Train: 80578 | Test: 20258
+
+Training ALS with 3-fold cross-validation ...
+Best params -> rank=50, regParam=0.1, maxIter=10
+
+Test RMSE: 0.8706 | Test MAE: 0.6748
+Baseline (global mean) RMSE: 1.0504
+
+Top-5 recommendations for 5 sample users:
++------+----------------------------------------------------+----------------------------+----------------+
+|userId|title                                               |genres                      |predicted_rating|
++------+----------------------------------------------------+----------------------------+----------------+
+|1     |Three Billboards Outside Ebbing, Missouri (2017)    |Crime|Drama                 |5.54            |
+|1     |True Grit (1969)                                    |Adventure|Drama|Western     |5.36            |
+|1     |Yojimbo (1961)                                      |Action|Adventure            |5.33            |
+|1     |Victory (a.k.a. Escape to Victory) (1981)           |Action|Drama|War            |5.27            |
+|1     |Cosmos                                              |(no genres listed)          |5.23            |
+|2     |The Jinx: The Life and Deaths of Robert Durst (2015)|Documentary                 |4.89            |
+|2     |Stranger Than Paradise (1984)                       |Comedy|Drama                |4.56            |
+|2     |Warrior (2011)                                      |Drama                       |4.56            |
+|2     |Inside Job (2010)                                   |Documentary                 |4.52            |
+|2     |Enter the Void (2009)                               |Drama                       |4.5             |
+|3     |Alien Contamination (1980)                          |Action|Horror|Sci-Fi        |4.9             |
+|3     |Galaxy of Terror (Quest) (1981)                     |Action|Horror|Mystery|Sci-Fi|4.9             |
+|3     |Hangar 18 (1980)                                    |Action|Sci-Fi|Thriller      |4.82            |
+|3     |The Lair of the White Worm (1988)                   |Comedy|Horror               |4.76            |
+|3     |Saturn 3 (1980)                                     |Adventure|Sci-Fi|Thriller   |4.69            |
+|4     |I'm the One That I Want (2000)                      |Comedy                      |4.92            |
+|4     |Afterglow (1997)                                    |Drama|Romance               |4.85            |
+|4     |Beautiful Thing (1996)                              |Drama|Romance               |4.85            |
+|4     |Saboteur (1942)                                     |Mystery|Thriller            |4.8             |
+|4     |Bridge on the River Kwai, The (1957)                |Adventure|Drama|War         |4.76            |
+|5     |Three Billboards Outside Ebbing, Missouri (2017)    |Crime|Drama                 |4.61            |
+|5     |Once Were Warriors (1994)                           |Crime|Drama                 |4.56            |
+|5     |Yojimbo (1961)                                      |Action|Adventure            |4.52            |
+|5     |In the Name of the Father (1993)                    |Drama                       |4.5             |
+|5     |Victory (a.k.a. Escape to Victory) (1981)           |Action|Drama|War            |4.49            |
++------+----------------------------------------------------+----------------------------+----------------+
+
+Top-5 users for each of 3 sample movies:
++-------+---------------------------------------------------------------------------------------+
+|movieId|recommendations                                                                        |
++-------+---------------------------------------------------------------------------------------+
+|1      |[{276, 5.0996494}, {53, 5.059526}, {43, 4.8586826}, {452, 4.8412585}, {99, 4.780889}]  |
+|50     |[{53, 5.3671517}, {375, 5.1172824}, {122, 5.077929}, {276, 5.072462}, {452, 5.0222235}]|
+|296    |[{53, 5.316564}, {236, 5.2285523}, {122, 5.2249756}, {375, 5.2242994}, {276, 5.222405}]|
++-------+---------------------------------------------------------------------------------------+
+
+
+Done. Outputs saved in ./output/
